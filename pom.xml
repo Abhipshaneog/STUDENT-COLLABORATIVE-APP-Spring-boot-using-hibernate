@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
+		<version>3.2.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springboothibernate</groupId>
@@ -17,6 +17,28 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		
+    <!-- Spring Boot Starter -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+    <!--SLF4J API
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+         <version>2.0.12</version> Adjust version as needed -->
+    <!--</dependency>
+
+     Logback Classic 
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.4.14</version>-$NO-MVN-MAN-VER$--><!--$NO-MVN-MAN-VER$--> <!-- Adjust version as needed 
+    </dependency> -->
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

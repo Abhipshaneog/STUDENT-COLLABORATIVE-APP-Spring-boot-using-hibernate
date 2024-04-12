@@ -1,5 +1,7 @@
 package com.springboothibernate.myservice;
 
+import com.example.demo.dto.LoginRequest;
+import com.example.demo.dto.RegistrationRequest;
 import com.springboothibernate.myentity.A_Authentication;
 import com.springboothibernate.myrepository.A_AuthenticationTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,50 @@ public class A_AuthenticationTableService {
 
     @Autowired
     private A_AuthenticationTableRepository authenticationTableRepository;
+    
+    public void registerUser(RegistrationRequest request) {
+    	// Extract user details from registration request
+        String emailId = request.getEmail();
+        String password = request.getPassword();
+        // Additional details as needed
 
-    public A_Authentication saveAuthentication(A_Authentication authenticationTable) {
+        // Create entity object and set user details
+        A_Authentication user = new A_Authentication();
+        user.setEmailId(emailId);
+        user.setPassword(password);
+        
+
+        // Save user details to the database using repository
+        authenticationTableRepository.save(user);
+		
+		
+	}
+
+	public void loginUser(LoginRequest request) {
+		
+		    // Extract login credentials from login request
+		    String emailId = request.getEmail();
+		    String password = request.getPassword();
+
+		    
+		    A_Authentication user = authenticationTableRepository.findByEmailId(emailId);
+
+		    // Check if user exists and compare passwords
+		    if (user != null && user.getPassword() != null && user.getPassword().equals(password)) {
+		        // Authentication successful
+		    	System.out.println("Authentication successful");
+		    	
+		    } else {
+		        // Authentication failed
+		        
+		    }
+		}
+
+
+
+   
+
+	public A_Authentication saveAuthentication(A_Authentication authenticationTable) {
         return authenticationTableRepository.save(authenticationTable);
     }
 
@@ -30,4 +74,6 @@ public class A_AuthenticationTableService {
         return authenticationTableRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Authentication not found with id: " + id));
     }
+
+	
 }

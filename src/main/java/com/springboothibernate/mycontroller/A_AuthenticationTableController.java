@@ -4,8 +4,8 @@ import com.springboothibernate.myentity.A_Authentication;
 import com.springboothibernate.myservice.A_AuthenticationTableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import com.example.demo.dto.RegistrationRequest;
-import com.example.demo.dto.LoginRequest;
+import com.springboothibernate.dto.RegistrationRequest;
+import com.springboothibernate.dto.LoginRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

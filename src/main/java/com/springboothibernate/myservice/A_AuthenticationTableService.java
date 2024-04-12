@@ -1,7 +1,7 @@
 package com.springboothibernate.myservice;
 
-import com.example.demo.dto.LoginRequest;
-import com.example.demo.dto.RegistrationRequest;
+import com.springboothibernate.dto.LoginRequest;
+import com.springboothibernate.dto.*;
 import com.springboothibernate.myentity.A_Authentication;
 import com.springboothibernate.myrepository.A_AuthenticationTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.springboothibernate.dto;
 
 public class RegistrationRequest {
 	private String email;
